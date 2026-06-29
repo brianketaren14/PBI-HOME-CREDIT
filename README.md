@@ -65,6 +65,7 @@ External credit bureau scores (`EXT_SOURCE_2`, `EXT_SOURCE_3`) and applicant dem
 The ROC curve confirms moderate discriminative power (AUC = 0.69), notably better than random guessing. The model is tuned to maximize recall on the minority (default) class, which is intentional given the business cost of missing a true default is typically higher than over-flagging a safe applicant — at the expense of precision on Class 1.
 
 ## 🔍 Risk Analysis Insights
+<img width="693" height="589" alt="plot" src="https://github.com/user-attachments/assets/b5d49ddb-5680-4101-960a-d563c18c3fbb" />
 
 ### 1. Early Detection of Late-Payment Risk
 Low external credit scores correlate strongly with payment problems early in the loan tenor. This makes external scores an effective **early warning system** for new loan applications.
