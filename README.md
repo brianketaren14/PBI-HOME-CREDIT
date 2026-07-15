@@ -9,7 +9,7 @@ Home Credit aims to leverage statistical methods and Machine Learning to accurat
 - ✅ Avoiding the rejection of customers who are actually capable of repaying their loans
 - ✅ Ensuring loans are disbursed to the right, creditworthy applicants
 - ✅ Detecting default risk at an early stage, before it materializes
-- Link slides : [Slides](https://docs.google.com/presentation/d/1z5bRefZK00VCbiaykaLjvWS6dOM0hgff4SDRIcs5Gck/edit?usp=sharing)
+
 ## 📊 Dataset
 
 This project uses the **Home Credit Default Risk** dataset, which consists of multiple relational tables describing each applicant's current loan application as well as their historical credit behavior.
@@ -26,20 +26,7 @@ This project uses the **Home Credit Default Risk** dataset, which consists of mu
 
 ## 🧪 Model Evaluation
 
-The best model is (**Logistic Regression**) to predict the `TARGET` variable (likelihood of payment difficulty).
-
-### Top 10 Most Important Features
-
-1. `EXT_SOURCE_2`
-2. `EXT_SOURCE_3`
-3. `DAYS_BIRTH`
-4. `BUREAU_DAYS_CREDIT_mean`
-5. `BUREAU_DAYS_CREDIT_min`
-6. `DAYS_LAST_PHONE_CHANGE`
-7. `DAYS_ID_PUBLISH`
-8. `DAYS_REGISTRATION`
-9. `REGION_POPULATION_RELATIVE`
-10. `DAYS_EMPLOYED`
+The best model is (**XGBoost + SMOTETomek**) to predict the `TARGET` variable (likelihood of payment difficulty).
 
 External credit bureau scores (`EXT_SOURCE_2`, `EXT_SOURCE_3`) and applicant demographic/behavioral signals (age, employment tenure, ID/registration recency) are the strongest predictors of default risk.
 
@@ -49,20 +36,18 @@ External credit bureau scores (`EXT_SOURCE_2`, `EXT_SOURCE_3`) and applicant dem
 
 |              | Predicted 0 | Predicted 1 |
 |--------------|------------:|------------:|
-| **Actual 0** | 38,867 | 17,671 |
-| **Actual 1** | 1,545  | 3,420  |
+| **Actual 0** | 40,556 | 14,038 |
+| **Actual 1** | 1,830  | 5,079  |
 
 **Classification Report**
 
-| Class | Precision | Recall | F1-score | Support |
-|-------|----------:|-------:|---------:|--------:|
-| 0 (No default) | 0.96 | 0.69 | 0.80 | 56,538 |
-| 1 (Default)     | 0.16 | 0.69 | 0.26 | 4,965  |
+| Class | Precision | Recall | F1-score |
+|-------|----------:|-------:|---------:|
+| 0 (No default) | 0.96 | 0.74 | 0.84 | 
+| 1 (Default)     | 0.27 | 0.74 | 0.39 |
 
-- **Accuracy:** 0.69
-- **AUC (ROC):** 0.69
-
-The ROC curve confirms moderate discriminative power (AUC = 0.69), notably better than random guessing. The model is tuned to maximize recall on the minority (default) class, which is intentional given the business cost of missing a true default is typically higher than over-flagging a safe applicant — at the expense of precision on Class 1.
+- **Accuracy:** 74%
+- **AUC (ROC):** 74%
 
 ## 🔍 Risk Analysis Insights
 <img width="693" height="589" alt="plot" src="https://github.com/user-attachments/assets/b5d49ddb-5680-4101-960a-d563c18c3fbb" />
