@@ -1,7 +1,5 @@
 # Home Credit Default Risk Prediction
 
-**Optimizing Loan Approval through Machine Learning Classification**
-
 ## 🎯 Project Mission
 
 Home Credit aims to leverage statistical methods and Machine Learning to accurately predict credit risk scores. The goal is to support smarter, fairer, and more proactive lending decisions by:
