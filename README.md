@@ -25,11 +25,6 @@ This project uses the **Home Credit Default Risk** dataset, which consists of mu
 ## 🧪 Model Evaluation
 
 The best model is (**XGBoost + SMOTETomek**) to predict the `TARGET` variable (likelihood of payment difficulty).
-
-External credit bureau scores (`EXT_SOURCE_2`, `EXT_SOURCE_3`) and applicant demographic/behavioral signals (age, employment tenure, ID/registration recency) are the strongest predictors of default risk.
-
-### Performance Metrics
-
 **Confusion Matrix**
 
 |              | Predicted 0 | Predicted 1 |
